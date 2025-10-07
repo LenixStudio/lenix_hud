@@ -2,7 +2,7 @@ let entityHealth, entityArmour;
 
 RegisterNuiCallback('nuiReady', (data, cb) => {
   cb('ok');
-  
+
   const isAlive = IsPlayerAlive();
   entityHealth = isAlive ? GetEntityHealth(PlayerPedId()) / 2 : 0;
   entityArmour = GetPedArmour(PlayerPedId());

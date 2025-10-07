@@ -13,4 +13,7 @@ client_scripts {
 server_script 'server.js'
 
 ui_page 'web/index.html'
-file 'web/**'
+files {
+  'web/index.html',
+  'web/dist/client.js'
+}
