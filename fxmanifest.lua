@@ -4,7 +4,7 @@ lua54 'yes'
 dependencies {
   'qb-core',
 }
-author 'Lenix'
+author 'Trippler Scripts'
 
 client_scripts {
   'bridge/client.js',
