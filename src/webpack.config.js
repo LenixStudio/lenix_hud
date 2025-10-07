@@ -5,14 +5,12 @@ const JavaScriptObfuscator = require('webpack-obfuscator');
 module.exports = {
   mode: 'production',
   entry: {
-    client: [
-      './build/script.js',
-      '../client/main.js'
-    ]
+    script: './web/script.js',
+    client: './main.js',
   },
   output: {
     filename: '[name].js',
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, '../build'),
   },
   optimization: {
     minimize: true,
