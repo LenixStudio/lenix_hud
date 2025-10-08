@@ -1,29 +1,51 @@
 let entityHealth, entityArmour;
+let updateInterval = null;
 
 RegisterNuiCallback('nuiReady', (data, cb) => {
   cb('ok');
 
-  const isAlive = IsPlayerAlive();
-  entityHealth = isAlive ? GetEntityHealth(PlayerPedId()) / 2 : 0;
-  entityArmour = GetPedArmour(PlayerPedId());
-  SendNuiMessage(JSON.stringify({
-    entityHealth: entityHealth,
-    entityArmour: entityArmour
-  }));
+  exports('ShowHud', function() {
+    if (updateInterval !== null) {
+      clearInterval(updateInterval);
+    }
 
-  setInterval(() => {
-    const currentEntityHealth = entityHealth;
-    const currentEntityArmour = entityArmour;
-    const isAlive = IsPlayerAlive();
-    
+    const isAlive = exports.tr_hud.IsPlayerAlive();
     entityHealth = isAlive ? GetEntityHealth(PlayerPedId()) / 2 : 0;
     entityArmour = GetPedArmour(PlayerPedId());
     
-    if (currentEntityHealth != entityHealth || currentEntityArmour != entityArmour) {
-      SendNuiMessage(JSON.stringify({
-        entityHealth: entityHealth,
-        entityArmour: entityArmour
-      }));
+    SendNuiMessage(JSON.stringify({
+      action: 'show',
+      entityHealth: entityHealth,
+      entityArmour: entityArmour
+    }));
+    
+    updateInterval = setInterval(() => {
+      const currentEntityHealth = entityHealth;
+      const currentEntityArmour = entityArmour;
+      const isAlive = exports.tr_hud.IsPlayerAlive();
+      
+      entityHealth = isAlive ? GetEntityHealth(PlayerPedId()) / 2 : 0;
+      entityArmour = GetPedArmour(PlayerPedId());
+      
+      if (currentEntityHealth != entityHealth || currentEntityArmour != entityArmour) {
+        SendNuiMessage(JSON.stringify({
+          entityHealth: entityHealth,
+          entityArmour: entityArmour
+        }));
+      }
+    }, 100);
+  });
+
+  exports('HideHud', function() {
+    if (updateInterval !== null) {
+      clearInterval(updateInterval);
+      updateInterval = null;
     }
-  }, 100);
-})
+    
+    setTimeout(() => {
+      SendNuiMessage(JSON.stringify({
+        action: 'hide'
+      }));
+    }, 1000);
+  });
+});
