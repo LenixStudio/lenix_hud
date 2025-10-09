@@ -3,3 +3,13 @@ game 'gta5'
 lua54 'yes'
 
 author 'Trippler Hub'
+
+client_scripts {
+  'client/main.js'
+}
+
+ui_page 'web/index.html'
+files {
+  'web/main.js',
+  'web/index.html',
+}
