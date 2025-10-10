@@ -9,13 +9,13 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
     
         <div class="ammo-count">
-          <span class="ammo-current">0</span>
+          <span class="ammo-current">-</span>
           <span class="ammo-separator">/</span>
-          <span class="ammo-reserve">0</span>
+          <span class="ammo-reserve">-</span>
         </div>
     
         <div class="weapon-info">
-          <div class="weapon-name">Unknown</div>
+          <div class="weapon-name"></div>
           <div class="kill-stats">
             <div class="kills-count">0x</div>
             <div class="kill-icon">
@@ -27,7 +27,6 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
   }
   
-  // Store references to elements (faster access)
   let weaponImage, ammoCurrent, ammoReserve, weaponName, killsCount;
   
   function cacheElements() {
@@ -38,23 +37,17 @@ document.addEventListener("DOMContentLoaded", () => {
     killsCount = document.querySelector('.kills-count');
   }
   
-  // Update only the values (much faster)
   function updateTheValues(weapon, playerKills) {
-    // Update image
     weaponImage.src = `nui://qb-inventory/html/images/${weapon.image}`;
     weaponImage.alt = weapon.name;
     
-    // Update ammo
     ammoCurrent.textContent = weapon.ammo;
     ammoReserve.textContent = weapon.reserve;
     
-    // Update weapon name
     weaponName.textContent = weapon.name;
     
-    // Update kills
     killsCount.textContent = `${playerKills}x`;
     
-    // Update ammo color based on amount
     if (weapon.clipSize && weapon.ammo <= weapon.clipSize / 4) {
       ammoCurrent.style.color = '#ff4444';
       ammoCurrent.style.textShadow = '0 0 10px rgba(255, 0, 0, 0.6)';
@@ -67,7 +60,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
   
-  // Add styles
   let style = document.createElement("style");
   style.textContent = `
     * {
@@ -218,7 +210,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
   initializeHUD();
   cacheElements();
-  
+
   fetch(`https://${GetParentResourceName()}/NuiReady`, {
     method: "POST",
     headers: {
@@ -226,10 +218,10 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     body: JSON.stringify({}),
   });
-  
+
   window.addEventListener('message', (event) => {
     let data = event.data;
-    
+
     if (data.action === 'show') {
       document.body.style.display = 'block';
     } else if (data.action === 'hide') {
