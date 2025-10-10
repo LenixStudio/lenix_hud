@@ -12,7 +12,7 @@ RegisterNuiCallback('NuiReady', function(data, cb) {
     const reserve = GetAmmoInPedWeapon(ped, weaponHash);
     const clip = GetWeaponClipSize(weaponHash);
     let weaponName = 'Unknown'
-    let weaponImage = 'Invalid'
+    let weaponImage = 'https://gtahash.ru/Image/Fist-icon.b82f0d52caf21ad19d97f6fb77056a77.png'
     for (let itemName in QBCore.Shared.Items) {
       let item = QBCore.Shared.Items[itemName]
       if (item.name && GetHashKey(item.name) === weaponHash) {
@@ -31,7 +31,7 @@ RegisterNuiCallback('NuiReady', function(data, cb) {
         reserve: reserve - ammo,
         clipSize: clip
       },
-      playerKills: '0'
+      playerKills: exports['tr_gunhud'].getPlayerKills()
     }))
   }, 90)
 })
