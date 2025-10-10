@@ -1,0 +1,25 @@
+# Auto Build Setup
+
+## Setup (One Time)
+
+```bash
+npm install javascript-obfuscator terser
+```
+
+## Build
+
+```bash
+node build.js
+```
+
+## What It Does
+
+Automatically finds all `.js` files and creates minified + obfuscated versions in `build/` folders next to each file.
+
+**Example:**
+```
+main.js → build/main.js
+web/script.js → web/build/script.js
+```
+
+That's it! ✨
