@@ -2,10 +2,11 @@ fx_version 'cerulean'
 game 'gta5'
 lua54 'yes'
 
-author 'Trippler Hub'
+author 'Trippler Scripts'
 
 client_scripts {
-  'client/main.js'
+  'client/bridge.js',
+  'client/main.js',
 }
 
 ui_page 'web/index.html'
