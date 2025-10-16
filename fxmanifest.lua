@@ -8,12 +8,12 @@ dependencies {
 author 'Trippler Scripts'
 
 client_scripts {
-  'src/bridge/client.js',
-  'build/client.js'
+  'client/bridge.js',
+  'client/build/client.js'
 }
 
-ui_page 'src/web/index.html'
+ui_page 'web/index.html'
 files {
-  'src/web/index.html',
-  'build/script.js'
+  'web/index.html',
+  'web/build/main.js'
 }
