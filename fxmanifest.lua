@@ -5,13 +5,13 @@ dependencies {
   'qb-core',
 }
 
-author 'Trippler Scripts'
+author 'Trippler'
+docs 'https://docs.trippler.store'
 
 client_scripts {
   'client/bridge.js',
   'client/build/client.js'
 }
-
 ui_page 'web/index.html'
 files {
   'web/index.html',
