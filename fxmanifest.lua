@@ -7,6 +7,7 @@ dependencies {
 
 author 'Trippler'
 docs 'https://docs.trippler.store'
+version '1.0.0'
 
 client_scripts {
   'client/bridge.js',
