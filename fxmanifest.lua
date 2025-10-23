@@ -10,10 +10,10 @@ docs 'https://docs.trippler.store'
 
 client_scripts {
   'client/bridge.js',
-  'client/main.js'
+  'client/build/main.js'
 }
 ui_page 'web/index.html'
 files {
   'web/index.html',
-  'web/main.js'
+  'web/build/main.js'
 }
