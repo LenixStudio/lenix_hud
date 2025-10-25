@@ -6,9 +6,9 @@ exports('IsPlayerAlive', function() {
 })
 
 onNet('QBCore:Client:OnPlayerLoaded', () => {
-  exports.tr_hud.ShowHud()
+  exports.tr_hud.show()
 })
 
 onNet('QBCore:Client:OnPlayerUnload', () => {
-  exports.tr_hud.HideHud()
+  exports.tr_hud.hide()
 })
