@@ -4,7 +4,7 @@ let updateInterval = null;
 RegisterNuiCallback('nuiReady', (data, cb) => {
   cb('ok');
 
-  exports('ShowHud', function() {
+  exports('hud', function() {
     if (updateInterval !== null) {
       clearInterval(updateInterval);
     }
@@ -36,7 +36,7 @@ RegisterNuiCallback('nuiReady', (data, cb) => {
     }, 100);
   });
 
-  exports('HideHud', function() {
+  exports('hide', function() {
     if (updateInterval !== null) {
       clearInterval(updateInterval);
       updateInterval = null;
