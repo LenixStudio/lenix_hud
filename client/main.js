@@ -1,4 +1,7 @@
-RegisterNuiCallback('NuiReady', function(data, cb) {
+const lib = exports.tr_lib.require('@tr_lib/init')
+const config = lib.load('config')
+
+RegisterNuiCallback('nuiReady', function(data, cb) {
   cb(true)
   const QBCore = exports['qb-core'].GetCoreObject()
   let interval
@@ -24,14 +27,14 @@ RegisterNuiCallback('NuiReady', function(data, cb) {
       const [retvalClip, ammo] = GetAmmoInClip(ped, weaponHash);
       const reserve = GetAmmoInPedWeapon(ped, weaponHash);
       const clipSize = GetWeaponClipSize(weaponHash);
-      const fistImage = 'https://gtahash.ru/Image/Fist-icon.b82f0d52caf21ad19d97f6fb77056a77.png'
+      const fistImage = config.fistImage
       let weaponName = 'Unknown'
       let weaponImage = 'Undefined'
       for (let itemName in QBCore.Shared.Items) {
         let item = QBCore.Shared.Items[itemName]
         if (item.name && GetHashKey(item.name) === weaponHash) {
           weaponName = item.label
-          weaponImage = item.name == 'weapon_unarmed' ? fistImage : `nui://qb-inventory/html/images/${item.image}`
+          weaponImage = item.name == 'weapon_unarmed' ? fistImage : `nui://${config.imagesPath}/${item.image}`
           break
         }
       }
@@ -45,7 +48,7 @@ RegisterNuiCallback('NuiReady', function(data, cb) {
           reserve: reserve - ammo,
           clipSize: clipSize
         },
-        playerKills: exports['tr_gunhud'].getPlayerKills()
+        playerKills: exports.tr_gunhud.getPlayerKills()
       }))
     }, 90)
   }

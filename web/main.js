@@ -210,7 +210,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initializeHUD();
   cacheElements();
 
-  fetch(`https://${GetParentResourceName()}/NuiReady`, {
+  fetch(`https://${GetParentResourceName()}/nuiReady`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
