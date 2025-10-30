@@ -1,5 +1,7 @@
 let entityHealth, entityArmour;
 let updateInterval = null;
+const lib = exports.tr_lib.require('@tr_lib/init')
+const config = lib.load('config')
 
 RegisterNuiCallback('nuiReady', (data, cb) => {
   cb('ok');
@@ -33,7 +35,7 @@ RegisterNuiCallback('nuiReady', (data, cb) => {
           entityArmour: entityArmour
         }));
       }
-    }, 100);
+    }, config.refreshInterval);
   });
 
   exports('hide', function() {
