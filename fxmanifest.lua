@@ -2,7 +2,6 @@ fx_version 'cerulean'
 game 'gta5'
 lua54 'yes'
 dependencies {
-  'tr_lib'
   'qb-core',
 }
 
@@ -11,6 +10,7 @@ docs 'https://docs.trippler.store'
 version '1.0.2'
 
 client_scripts {
+  'config.js'
   'client/bridge.js',
   'client/build/main.js'
 }
