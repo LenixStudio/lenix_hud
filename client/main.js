@@ -4,7 +4,7 @@ let updateInterval = null;
 RegisterNuiCallback('nuiReady', (data, cb) => {
   cb('ok');
 
-  exports('hud', function() {
+  exports('show', function() {
     if (updateInterval !== null) {
       clearInterval(updateInterval);
     }
