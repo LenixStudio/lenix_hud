@@ -10,7 +10,7 @@ docs 'https://docs.trippler.store'
 version '1.0.2'
 
 client_scripts {
-  'config.js'
+  'config.js',
   'client/bridge.js',
   'client/build/main.js'
 }
