@@ -7,11 +7,14 @@ dependencies {
 
 author 'Trippler'
 docs 'https://docs.trippler.store'
-version '1.0.1'
+version '1.0.2'
 
+files {
+  'config.json',
+}
 client_scripts {
   'client/bridge.js',
-  'client/build/main.js',
+  'client/main.js',
 }
 ui_page 'web/index.html'
 file 'web/**'
