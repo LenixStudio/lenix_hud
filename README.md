@@ -7,13 +7,13 @@ HUD for PvP servers
 ### Show
 
 ```js
-exports.tr_hud.show()
+exports.lenix_hud.show()
 ```
 
 ### Hide
 
 ```js
-exports.tr_hud.hide()
+exports.lenix_hud.hide()
 ```
 
 

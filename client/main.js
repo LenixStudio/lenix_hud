@@ -9,7 +9,7 @@ RegisterNuiCallback('nuiReady', (data, cb) => {
       clearInterval(updateInterval);
     }
 
-    const isAlive = exports.tr_hud.IsPlayerAlive();
+    const isAlive = exports.lenix_hud.IsPlayerAlive();
     entityHealth = isAlive ? GetEntityHealth(PlayerPedId()) / 2 : 0;
     entityArmour = GetPedArmour(PlayerPedId());
     
@@ -22,7 +22,7 @@ RegisterNuiCallback('nuiReady', (data, cb) => {
     updateInterval = setInterval(() => {
       const currentEntityHealth = entityHealth;
       const currentEntityArmour = entityArmour;
-      const isAlive = exports.tr_hud.IsPlayerAlive();
+      const isAlive = exports.lenix_hud.IsPlayerAlive();
       
       entityHealth = isAlive ? GetEntityHealth(PlayerPedId()) / 2 : 0;
       entityArmour = GetPedArmour(PlayerPedId());
