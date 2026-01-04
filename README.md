@@ -1,6 +1,9 @@
 # lenix_hud
 HUD for PvP servers
 
+## About
+<img width="591" height="84" alt="hud" src="https://github.com/user-attachments/assets/f95ffcfb-2d4e-4501-9195-838e3f4fb92f" />
+
 # Imports
 ## Client
 
