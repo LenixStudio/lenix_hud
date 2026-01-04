@@ -5,8 +5,7 @@ dependencies {
   'qb-core',
 }
 
-author 'Trippler'
-docs 'https://docs.trippler.store'
+author 'https://github.com/LenixDev'
 version '1.0.2'
 
 client_scripts {
