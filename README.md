@@ -10,7 +10,14 @@ This script is designed to enhance your server's gameplay by providing a UI that
 * get an idea in a better way about their weapon's name, current ammo, reserve ammo and image. as well as they can see how much kills they have in overall, the current weapon ammo's color'll be changed depending on how much they have left ammo in the weapon, the more they shoot, the more it gets darker torwards the red color
 
 ### Instructions
-* Installation: this script is basically a dnd resource, you just need to implement your own kills function and integrate it into your database so the weaponary hud gets a synced data
+* Installation: 
+  * this script is basically a dnd resource, you just need to implement your own kills function and integrate it into your database so the weaponary hud gets a synced data
+  * Node.js: make sure you have the Node.js installed on your device, to do so run: 
+  ```bash
+  node -v
+  ```
+  1. run: npm i
+  2. run: npm run build
 * Environment: QB
 * Support: available with priority
 
@@ -33,13 +40,13 @@ This script is designed to enhance your server's gameplay by providing a UI that
 
 ### Show
 
-```js
+```ts
 exports.lenix_hud.show()
 ```
 
 ### Hide
 
-```js
+```ts
 exports.lenix_hud.hide()
 ```
 

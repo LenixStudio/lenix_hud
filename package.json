@@ -1,6 +1,4 @@
 {
-  "name": "lenix-fivem-typescript-template",
-  "version": "3.0.0",
   "scripts": {
     "build": "npm run build:client && npm run build:server && npm run build:nui && npm run build:style",
     "build:client": "esbuild client/index.ts --bundle --format=iife --platform=node --target=es2020 --minify --outfile=build/client.js",
@@ -15,7 +13,6 @@
     "reinstall": "rimraf package-lock.json node_modules/.package-lock.json && npm install"
   },
   "devDependencies": {
-    "@lenixdev/ui_components": "latest",
     "@trippler/tr_kit": "latest",
     "@trippler/tr_lib": "latest",
     "typescript": "^5.0.0",
