@@ -1,5 +1,6 @@
 fx_version 'cerulean'
 game 'gta5'
+dependency 'qb-core'
 
 author 'https://github.com/LenixDev'
 version '2.0.0'
