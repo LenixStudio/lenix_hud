@@ -46,13 +46,17 @@ exports.lenix_hud.hide()
 ## Configuration
 ```ts
 vitals = {
+  // whether the vitals hud is enabled or not
+  enabled: boolean,
   // the number of milliseconds between each refresh
-  refreshInterval: 100
+  refreshInterval: number
 }
 weaponary = {
+  // whether the weaponary hud is enabled or not
+  enabled: boolean,
   // the image of the fist you want to display
-  fistImage: "https://gtahash.ru/Image/Fist-icon.b82f0d52caf21ad19d97f6fb77056a77.png",
+  fistImage: string,
   // the path to your inventory's images
-  imagesPath: "qb-inventory/html/images"
+  imagesPath: string
 }
 ```
