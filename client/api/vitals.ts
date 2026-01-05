@@ -1,6 +1,6 @@
-import { showVitals,  } from "../modules"
+import { showVitals, hideVitals } from "../modules/vitals"
 
-export const getPlayerFxData = () => {
+export const getFxPlayerData = () => {
   const QBCore = exports['qb-core'].GetCoreObject()
   const PlayerData = QBCore.Functions.GetPlayerData()
   return PlayerData

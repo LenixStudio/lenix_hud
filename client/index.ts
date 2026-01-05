@@ -1,2 +1,1 @@
-import './api/vitals'
-import './api/weapon'
+import './api'

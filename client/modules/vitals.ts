@@ -1,12 +1,12 @@
 import { vitals } from "../../shared/constants"
-import { getPlayerFxData } from "../api/vitals"
+import { getFxPlayerData } from "../api/vitals"
 import { triggerNuiCallback } from "@trippler/tr_lib/client"
 
 let entityHealth: number, entityArmour: number
 let updateInterval: unknown
 
 const isPlayerAlive = () => {
-  const playerData = getPlayerFxData()
+  const playerData = getFxPlayerData()
   let isAlive = !(playerData.metadata['inlaststand'] || playerData.metadata['isdead'])
   return isAlive
 }

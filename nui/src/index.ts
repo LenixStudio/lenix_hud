@@ -1,2 +1,4 @@
-import './elements'
-import './api'
+import './elements/vitals'
+import './elements/weaponary'
+import './api/vitals'
+import './api/weaponary'

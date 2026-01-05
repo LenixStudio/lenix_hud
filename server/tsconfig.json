@@ -1,9 +1,0 @@
-{
-  "extends": "../tsconfig.json",
-  "compilerOptions": {
-    "outDir": "../build",
-    "rootDir": "../",
-    "types": ["@citizenfx/server"]
-  },
-  "include": ["**/*", "../shared/**/*"]
-}
