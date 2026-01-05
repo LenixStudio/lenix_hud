@@ -1,0 +1,30 @@
+{
+  "name": "lenix-fivem-typescript-template",
+  "version": "3.0.0",
+  "scripts": {
+    "build": "npm run build:client && npm run build:server && npm run build:nui && npm run build:style",
+    "build:client": "esbuild client/index.ts --bundle --format=iife --platform=node --target=es2020 --minify --outfile=build/client.js",
+    "build:server": "esbuild server/index.ts --bundle --platform=node --target=es2020 --minify --outfile=build/server.js",
+    "build:nui": "esbuild nui/src/index.ts --bundle --platform=browser --target=2022 --minify --outfile=build/nui.js",
+    "build:style": "tailwindcss -i ./nui/src/tailwind.css -o ./build/style.css",
+    "watch": "concurrently \"npm:watch:client\" \"npm:watch:server\" \"npm:watch:nui\" \"npm:watch:style\"",
+    "watch:client": "esbuild client/index.ts --bundle --format=iife ---platform=node -target=es2020 --watch --outfile=build/client.js",
+    "watch:server": "esbuild server/index.ts --bundle --platform=node --target=es2020 --watch --outfile=build/server.js",
+    "watch:nui": "esbuild nui/src/index.ts --bundle --platform=browser --target=2022 --watch --outfile=build/nui.js",
+    "watch:style": "tailwindcss -i ./nui/src/tailwind.css -o ./build/style.css --watch",
+    "reinstall": "rimraf package-lock.json node_modules/.package-lock.json && npm install"
+  },
+  "devDependencies": {
+    "@lenixdev/ui_components": "latest",
+    "@trippler/tr_kit": "latest",
+    "@trippler/tr_lib": "latest",
+    "typescript": "^5.0.0",
+    "tailwindcss": "^3.4.0",
+    "@types/node": "^20.0.0",
+    "@citizenfx/client": "latest",
+    "@citizenfx/server": "latest",
+    "esbuild": "^0.24.2",
+    "concurrently": "^8.2.0",
+    "rimraf": "^6.0.1"
+  }
+}
