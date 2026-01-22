@@ -34,6 +34,7 @@ This script is designed to enhance your server's gameplay by providing a UI that
 - [ ] deploy the production mode of the script
 - [ ] add support for other frameworks
 - [ ] test the drawtext and helper modules
+- [ ] show how much kills did they got from every weapon
 
 # Imports
 ## Client
